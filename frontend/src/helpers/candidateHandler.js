@@ -1,6 +1,4 @@
 var defaultInst = "KKW";
-import { db } from "../helpers/firebase.js";
-import { ref, push, set } from "firebase/database";
 
 const DEPLOYED_BACKEND = import.meta.env.VITE_BACKEND_INSTANCE;
 

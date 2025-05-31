@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { saveAs } from 'file-saver';
 import {  addNewCandidate, changeDefaultInst } from "../../helpers/candidateHandler.js";
 import { createDocx } from '../../helpers/createDocs.js';
 import { handleFileUpload } from '../../helpers/NameExtractor.js';

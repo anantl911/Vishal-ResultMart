@@ -1,6 +1,5 @@
 import CountStats from "./CountStats.jsx";
 import Histogram from "./Histogram";
-import ScatterPlot from "./Scatterplot.jsx";
 import {useState, useRef} from "react";
 import { addNewCandidate, changeDefaultInst } from "../../helpers/candidateHandler.js";
 

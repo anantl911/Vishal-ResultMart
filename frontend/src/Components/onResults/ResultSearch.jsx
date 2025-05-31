@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { ref, get, remove } from "firebase/database";
-import { db } from "../../helpers/firebase.js";
 
 const DEPLOYED_BACKEND = import.meta.env.VITE_BACKEND_INSTANCE;
 

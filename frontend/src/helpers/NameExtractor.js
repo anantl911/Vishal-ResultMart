@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { Upload, FileText, Users, AlertCircle, CheckCircle } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import * as mammoth from 'mammoth';
 

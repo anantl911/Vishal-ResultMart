@@ -1,8 +1,6 @@
 import {useState, useEffect, useRef} from "react";
 import FAQ from "../Components/onAbout/FAQ.jsx";
 import Stats from "../Components/onAbout/Stats.jsx";
-import { ref, get } from "firebase/database";
-import { db } from "../helpers/firebase.js";
 import  MassGenerate from "../Components/onAbout/MassGenerate.jsx";
 import InfiniteSpin from "../spinners/InfiniteSpinner.jsx";
 
