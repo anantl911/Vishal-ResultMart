@@ -3,8 +3,6 @@ import { useState } from "react";
 import html2canvas from "html2canvas";
 
 
-import { ref, uploadString, deleteObject, getDownloadURL } from "firebase/storage";
-import { storage } from "../../helpers/firebase.js"; 
 import Copy from "./Copy.jsx";
 
 const ResultBox = (props) => {
@@ -31,28 +29,6 @@ const ResultBox = (props) => {
             </tbody>
         </table>
     );
-
-    const uploadImage = async () => {
-        if(uploadedImg.captured){
-            if(!uploadedImg.uploaded){
-                try {
-                    const imageRef = ref(storage, `tempUploads/${Date.now()}.png`);
-
-                    const snapshot = await uploadString(imageRef, uploadedImg.img, "data_url");
-
-                    const downloadURL = await getDownloadURL(snapshot.ref);
-
-                    
-                    setUploadedImg(prev => ({...prev, uploaded: true, url: downloadURL, captured:true, storageRef: imageRef}));
-                } catch (error) {
-                    console.error("Failed to upload or either delete", error);
-                }
-            }
-        } else {
-            const resultImg = await handleCapture();
-            setUploadedImg(prev => ({...prev, img: resultImg, captured: true}));
-        }
-    };
 
     const downloadImage = (base64Image, filename = "vishalMega_result.png") => {
         const link = document.createElement('a');
