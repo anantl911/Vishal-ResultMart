@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-const DEPLOYED_BACKEND = import.meta.env.VITE_BACKEND_INSTANCE;
-
 const ResultSearch = (props) => {
 
     const [candidateSeatNo, setCandidateSeatNo] = useState("");
@@ -16,7 +14,7 @@ const ResultSearch = (props) => {
         } 
         
         try{
-            const response = fetch(`${DEPLOYED_BACKEND}/api/getresult/${encodeURIComponent(candidateSeatNo)}&${encodeURIComponent(POB)}`).then(response => response.json()).then(result => {
+            const response = fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/getresult/${encodeURIComponent(candidateSeatNo)}&${encodeURIComponent(POB)}`).then(response => response.json()).then(result => {
                 if(result.success) {
                     props.storeResult(result.data);
                     props.updateShowResult();
@@ -35,7 +33,7 @@ const ResultSearch = (props) => {
 
     const handleDeletion = () => {
     const seatNo = prompt("Seat No: ");
-        fetch(`${DEPLOYED_BACKEND}/api/delete`, {
+        fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/delete`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

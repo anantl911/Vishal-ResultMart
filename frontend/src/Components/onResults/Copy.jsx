@@ -1,7 +1,5 @@
 import {useState, useEffect} from "react";
 
-const DEPLOYED_BACKEND = import.meta.VITE_BACKEND_INSTANCE;
-
 const Copy = (props) => {
 
     const [buttonText, setBtnText] = useState("Copy");
@@ -74,7 +72,7 @@ You can give the exam too at vsmge2025.vercel.app
                     linkedInShare();
                     break;
             }
-            const shareResponse = fetch(`${DEPLOYED_BACKEND}/api/sharespike`, {method: "POST"}).catch(() => {});
+            const shareResponse = fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/sharespike`, {method: "POST"}).catch(() => {});
             props.flipCopyTriggered(false);
         } else{
 

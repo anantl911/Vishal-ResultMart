@@ -8,8 +8,6 @@ import MagnifyingSpinner from '../../spinners/MagnifyingSpinner.jsx';
 import ExplodeSpinner from '../../spinners/ExplodeSpinner.jsx';
 import Checkmark from '../../spinners/LottieCheck.jsx';
 
-const DEPLOYED_BACKEND = import.meta.VITE_BACKEND_INSTANCE;
-
 
 export default function MassGenerate() {
   const [file, setFile] = useState({files: null, uploaded: false});
@@ -23,7 +21,7 @@ export default function MassGenerate() {
 
 useEffect(() => {
   const getRecords = async () => {
-    const response = await fetch(`${DEPLOYED_BACKEND}/api/fetchall`)
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/fetchall`)
       .then(response => response.json())
       .then(data => { return data });
 
@@ -129,7 +127,7 @@ const handleGenerate = async () => {
     setNameGenPromo("Send Seat Nos to your friends")
     createDocx(successList, "vssmall.jpg")
 
-    await fetch(`${DEPLOYED_BACKEND}/api/pushCountIncr`, {method: "POST"}).then(response => response.json()).then((data) => data);
+    await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/pushCountIncr`, {method: "POST"}).then(response => response.json()).then((data) => data);
 
     setLoading((prev) => ({ ...prev, nameSearchLoading: false, giftLoading: true }));
 

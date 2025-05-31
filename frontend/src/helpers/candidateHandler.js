@@ -1,6 +1,5 @@
 var defaultInst = "KKW";
 
-const DEPLOYED_BACKEND = import.meta.env.VITE_BACKEND_INSTANCE;
 
 const subjectSheet = [
     {name: "Physical Ed.", totalTh: 80, totalPR: 20},
@@ -43,7 +42,7 @@ const pushRecord = async (record, institutionInitials = "KKW") => {
     let response;
     try{
 
-        const resultResponse = await fetch(`${DEPLOYED_BACKEND}/api/postResult`, {
+        const resultResponse = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/postResult`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({resultList: [record]})

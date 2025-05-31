@@ -4,8 +4,6 @@ import Stats from "../Components/onAbout/Stats.jsx";
 import  MassGenerate from "../Components/onAbout/MassGenerate.jsx";
 import InfiniteSpin from "../spinners/InfiniteSpinner.jsx";
 
-const DEPLOYED_BACKEND = import.meta.VITE_BACKEND_INSTANCE;
-
 const About = () => {
 
     const [resultList, setResults] = useState(null);
@@ -23,16 +21,17 @@ const About = () => {
         const fetchResults = async () => {
             try{
 
+            const response = await fetch(`${import.meta.VITE_BACKEND_INSTANCE}/api/fetchAll`).then(response => response.json()).then(data => {return data});
 
-            const response = await fetch(`${DEPLOYED_BACKEND}/api/fetchAll`);
+            console.log(response);
 
-            let fetchResponse = await fetch(`${DEPLOYED_BACKEND}/api/fetchdata`, { method: "POST" }); // this is for registering site views
+            let fetchResponse = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/fetchdata`, { method: "POST" }); // this is for registering site views
             const data = await response.json();
 
-            let visitResponse = await fetch(`${DEPLOYED_BACKEND}/api/getviews`).then(response => response.json()).then(data => {
+            let visitResponse = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/getviews`).then(response => response.json()).then(data => {
                 return data;
             })
-            let socialFetch = await fetch(`${DEPLOYED_BACKEND}/api/getshares`).then(response => response.json()).then(data => {return data}); 
+            let socialFetch = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/getshares`).then(response => response.json()).then(data => {return data}); 
 
             if(socialFetch.success) setSocialShareCount(socialFetch.data);
             if(visitResponse.success) setResultChecked(visitResponse.data);
