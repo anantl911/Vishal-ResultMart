@@ -22,20 +22,19 @@ const About = () => {
             try{
             const response = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/fetchAll`).then(response => response.json()).then(data => {return data});
 
-            console.log(response);
-
-            let fetchResponse = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/fetchdata`, { method: "POST" }); // this is for registering site views
-            const data = await response.json();
+            
+            let fetchResponse = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/fetchdata`, { method: "POST" }).then(response => response.json()).then(data => data); // this is for registering site views
 
             let visitResponse = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/getviews`).then(response => response.json()).then(data => {
                 return data;
             })
             let socialFetch = await fetch(`${import.meta.env.VITE_BACKEND_INSTANCE}/api/getshares`).then(response => response.json()).then(data => {return data}); 
 
+
             if(socialFetch.success) setSocialShareCount(socialFetch.data);
             if(visitResponse.success) setResultChecked(visitResponse.data);
-            if(data.success) {
-                setResults(data.data);
+            if(response.success) {
+                setResults(response.data);
                 setDataLoaded(true);
             } else return;
             } catch (err){
