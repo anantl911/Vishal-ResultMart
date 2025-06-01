@@ -74,11 +74,11 @@ const createDocx = async (entries, imageUrl = null) => {
   // Metadata section
   const today = new Date();
   let dayString = today.getDate().toString();
-  let Month = today.getMonth().toString();
+  let Month = String(today.getMonth()+1);
   const metadata = [
     makeMetadataLine('Exam Code: VBMEGA2025', 'Centre Code: 0805'),
     makeMetadataLine('Job: Group S', 'Month: May-June'),
-    makeMetadataLine('Exam Duration: 3 Hours', `Result on: ${dayString}/${Month}`),
+    makeMetadataLine('Exam Duration: 3 Hours', `Result on: ${dayString.padStart(2,"0")}/${Month.padStart(2,"0")}`),
     new Paragraph(''),
   ];
 

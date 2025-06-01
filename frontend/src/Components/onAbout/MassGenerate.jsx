@@ -71,7 +71,7 @@ const handleGenerate = async () => {
     } 
     
     console.log("resultList: ",resultList,"\nresultFlawed: ",resultFlawed);
-
+    setLoading({ parentLoading: true, uploadLoading: true, nameSearchLoading: false, giftLoading: false, loaded: false });
     for (const user of result.names) {
       const result = await addNewCandidate(
         user.first, user.middle, user.last,
@@ -99,7 +99,7 @@ const handleGenerate = async () => {
     }
 
 
-    setLoading({ parentLoading: true, uploadLoading: true, nameSearchLoading: false, giftLoading: false, loaded: false });
+    
     setNameGenPromo("Receiving your file.")
 
       if(result.names.length === 0) {
