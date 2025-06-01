@@ -25,7 +25,6 @@ useEffect(() => {
       .then(response => response.json())
       .then(data => { return data });
 
-      console.log("Response to this shit: ", response);
     if(response.success) setFetchedList(response.data);
   }
   
@@ -70,8 +69,9 @@ const handleGenerate = async () => {
       }
     } 
     
-    console.log("resultList: ",resultList,"\nresultFlawed: ",resultFlawed);
+   
     setLoading({ parentLoading: true, uploadLoading: true, nameSearchLoading: false, giftLoading: false, loaded: false });
+    if(nameGenPromo.includes("Bad") || nameGenPromo.includes("Duplicate"))  setNameGenPromo("Receiving your file");
     for (const user of result.names) {
       const result = await addNewCandidate(
         user.first, user.middle, user.last,
@@ -90,7 +90,7 @@ const handleGenerate = async () => {
 
     if(successList.length > 0 ) console.log("Pushed records");
     else{
-      console.log("Duplicate Count: ", duplicateCount, "Actual name length: ",result.names.length)
+    
       if(duplicateCount >= (result.names.length - 20) && duplicateCount <=  (result.names.length)) promoFailText = "Duplicate records rejected!";
       else promoFailText = "Bad file. No records found!";
 

@@ -36,7 +36,7 @@ You can give the exam too at vsmge2025.vercel.app
 
     const getCopyMsg = () => 
         {
-        console.log(props.IMGURL)
+
         switch(props.mediaName){
             case "Instagram":
                 return getInstaCopy();

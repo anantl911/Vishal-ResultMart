@@ -41,7 +41,6 @@ const ResultSearch = (props) => {
             body: JSON.stringify({ seatNo })
         }).then(response => response.json()).
         then(result => {
-            console.log(result);
             if(result.success) alert(result.msg)
             else alert(result.msg)
         }).catch (err => {
