@@ -69,27 +69,27 @@ const FAQ = () => {
 
                     {generateQuestions(
                     "What's this?", 
-                    "A joke... just like my entire existence and life is."
+                    "This website is meant to be a joke. It's built around the Vishal MegaMart buzz."
                     )}
                     {generateQuestions(
-                    "Why does this website not work sometimes", 
-                    "It doesn't work because it's made by me."
+                    "How does this work?", 
+                    "It's simple. You attempt the exam and your result gets generated."
                     )}
                     {generateQuestions(
                     "I'm in toppers list but I didn't pass.", 
                     "Toppers list includes names of those who've topped the exam but didn't pass."
                     )}
                     {generateQuestions(
-                    "Eww CREEP...! Remove my name. I don't have anything to do with you/know you.", 
-                    "Sorry for adding you. If u don't like it I've added option for you in the results page. Just enter your seat no and you'll be removed from the db :)"
+                    "Technical aspects of this site.", 
+                    "It's a simple js script that randomizes results. A BERT model is used to extract names from documents and generate results."
                     )}
                     {generateQuestions(
-                    "Why is the UI so ugly?", 
-                    "It's inspired by my face. 🤢🤮"
+                    "Contact?", 
+                    "Github: anantl911\n, LinkedIn: linkedin.com/in/anant-chavan-310543251/"
                     )}
                     {generateQuestions(
-                    "Frequently asked? Pehli baat to maine pucha nhi 😎", 
-                    "Haan.. haan bhai ban le cool."
+                    "What's the passing criteria?", 
+                    "Avoid a D grade in all subjects. Score above 94 in all subjects."
                     )}
                     {generateQuestions(
                     "What the hell? D grade? That's unfair!", 
@@ -97,11 +97,11 @@ const FAQ = () => {
                     )}
                     {generateQuestions(
                     "I passed the exam. Why is the joy music still being played?", 
-                    "Well life is still shit even if passed in a meme exam so why bother changing it."
+                    "Jindagi abhi baaki hai mere dost. :)"
                     )}
                     {generateQuestions(
                     "Why is there a subject named \"Help\"?", 
-                    "This website including my very own life is a complete fucking joke. Do not take anything seriously. "
+                    "This website is a complete joke. Do not take anything seriously "
                     )}
                     {generateQuestions(
                     "Brooo? But I really did want to become a Security Guard at Vishal Mega Mart", 
@@ -109,7 +109,7 @@ const FAQ = () => {
                     )}
                     {generateQuestions(
                     "Dark mode kidhar hai", 
-                    "Arra eeh baba endsem cha abhyas krre!!"
+                    "I made this site during my endsem so I didn't include dark mode."
                     )}
 
                 </div>
