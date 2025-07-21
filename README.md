@@ -6,10 +6,8 @@
 
 ## 📸 Demo
 
-### [Visit site. ](https://vmart2025.vercel.app)
-
 ![Text Maze Demo](https://i.ibb.co/qLtn2C9s/output.gif)
-
+### [Visit site. ](https://vmart2025.vercel.app)
 
 ## 🚀 Features
 
