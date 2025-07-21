@@ -52,7 +52,7 @@ APP_ID:
 MEASUREMENT_ID: 
 
 > 2. Environment variables for frontend
-	>> VITE_BACKEND_INSTANCE:
+>> VITE_BACKEND_INSTANCE:
 
 ___
 
