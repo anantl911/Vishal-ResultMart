@@ -8,7 +8,7 @@
 
 #### [Visit site. ](https://vmart2025.vercel.app)
 
-![Text Maze Demo](https://i.ibb.co/Lzqyx3z1/output.gif)
+![Text Maze Demo](https://i.ibb.co/qLtn2C9s/output.gif)
 
 
 ## 🚀 Features
